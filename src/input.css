@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+      @apply font-sans; /* Menggunakan font sans yang baru saja Anda ubah di konfigurasi */
+    }
+  }
+
+
+header {
+    transition: top 0.3s;  /* Transisi smooth saat navbar berubah */
+}
+
+.navbar-fixed {
+    @apply fixed z-[9999] bg-white bg-opacity-60;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1); /* Perbaiki `rgbal` menjadi `rgba` */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Garis tipis di bawah navbar */
+ }
+ 
+
+.hamburger-line {
+    @apply w-[30px] h-[2px] my-2 block bg-dark;
+}
+
+.hamburger-active > span:nth-child(1) {
+    @apply  rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+    @apply  -rotate-45;
+}
+
+.space-mono-regular {
+    font-family: "Space Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .space-mono-bold {
+    font-family: "Space Mono", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .space-mono-regular-italic {
+    font-family: "Space Mono", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .space-mono-bold-italic {
+    font-family: "Space Mono", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .montserrat {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+
+/* Alert container - ketika disembunyikan */
+.alert-container {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.alert-container:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Styling untuk konten alert */
+.alert-container .bg-white {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px); /* Mulai dari posisi di atas */
+    transition: transform 0.3s ease;
+}
+
+/* Ketika alert muncul, beri efek scaling */
+.alert-container.visible .bg-white {
+    transform: translateY(0) scale(1);
+}
+
+/* Styling untuk tombol */
+.alert-container button {
+    transition: opacity 0.3s ease;
+}
+
+.alert-container button:hover {
+    opacity: 0.8;
+}
+
+#alert-container {
+    pointer-events: none; /* Nonaktifkan pointer events pada container alert */
+}
+
+#alert-container .alert-content {
+    pointer-events: auto; /* Aktifkan pointer events pada konten di dalam alert */
+}
+
+#alert-container button {
+    pointer-events: auto; /* Pastikan tombol "Tutup" tetap dapat diklik */
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar-item {
+    animation: slide-down 0.5s ease-out forwards;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slide-up 0.6s ease-out forwards;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slide-up 0.6s ease-out forwards;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slide-up 0.6s ease-out forwards;
+}
+
+@keyframes slide-up-footer {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up-footer {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up-footer.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slide-up-footer 0.6s ease-out forwards;
+}
+
